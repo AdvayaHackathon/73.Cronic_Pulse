@@ -10,7 +10,7 @@ export const monumentsData: Monument[] = [
     country: "United States",
     state: "New York",
     location: "Liberty Island, New York Harbor",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1886",
     visitingHours: "9:30 AM - 5:00 PM",
     facts: [
@@ -32,7 +32,7 @@ export const monumentsData: Monument[] = [
     country: "United States",
     state: "California",
     location: "San Francisco, California",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1937",
     visitingHours: "Open 24 hours",
     facts: [
@@ -54,7 +54,7 @@ export const monumentsData: Monument[] = [
     country: "United States",
     state: "Washington DC",
     location: "National Mall, Washington DC",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1922",
     visitingHours: "Open 24 hours",
     facts: [
@@ -78,7 +78,7 @@ export const monumentsData: Monument[] = [
     country: "India",
     state: "Uttar Pradesh",
     location: "Agra, Uttar Pradesh",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1643",
     visitingHours: "Sunrise to Sunset (Closed on Fridays)",
     facts: [
@@ -100,7 +100,7 @@ export const monumentsData: Monument[] = [
     country: "India",
     state: "Delhi",
     location: "Old Delhi, Delhi",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1639",
     visitingHours: "9:30 AM - 4:30 PM (Closed on Mondays)",
     facts: [
@@ -124,7 +124,7 @@ export const monumentsData: Monument[] = [
     country: "France",
     state: "Île-de-France",
     location: "Champ de Mars, Paris",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1543349689-9a4d426bee8e?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1889",
     visitingHours: "9:00 AM - 12:45 AM",
     facts: [
@@ -146,7 +146,7 @@ export const monumentsData: Monument[] = [
     country: "France",
     state: "Île-de-France",
     location: "Rue de Rivoli, Paris",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1565099824688-e8c8bfb91a5c?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1793",
     visitingHours: "9:00 AM - 6:00 PM (Closed on Tuesdays)",
     facts: [
@@ -170,7 +170,7 @@ export const monumentsData: Monument[] = [
     country: "Italy",
     state: "Lazio",
     location: "Piazza del Colosseo, Rome",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "80 AD",
     visitingHours: "8:30 AM - 7:00 PM",
     facts: [
@@ -192,7 +192,7 @@ export const monumentsData: Monument[] = [
     country: "Italy",
     state: "Tuscany",
     location: "Piazza del Duomo, Pisa",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1603199506016-b9a594b593c0?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1372",
     visitingHours: "10:00 AM - 8:00 PM",
     facts: [
@@ -216,7 +216,7 @@ export const monumentsData: Monument[] = [
     country: "United Kingdom",
     state: "England",
     location: "Westminster, London",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1500380804539-4e1e8c1e7118?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "1859",
     visitingHours: "Tours by appointment only",
     facts: [
@@ -238,7 +238,7 @@ export const monumentsData: Monument[] = [
     country: "United Kingdom",
     state: "England",
     location: "Salisbury Plain, Wiltshire",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "https://images.unsplash.com/photo-1599833975787-5c143f373c30?q=80&w=1000&auto=format&fit=crop",
     yearBuilt: "3000 BC",
     visitingHours: "9:30 AM - 5:00 PM",
     facts: [
