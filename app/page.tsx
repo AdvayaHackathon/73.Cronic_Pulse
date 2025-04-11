@@ -6,6 +6,8 @@ import CountryStateSelector from "@/components/country-state-selector"
 import MonumentList from "@/components/monument-list"
 import MonumentDetail from "@/components/monument-detail"
 import type { Monument } from "@/types/monument"
+import MonumentPredictor from "@/components/monument-predictor"
+import { getMonumentByName } from "@/lib/monuments"
 
 export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
@@ -31,6 +33,14 @@ export default function Home() {
     setIsDetailOpen(false)
   }
 
+  const handlePredictionSelect = async (monumentName: string) => {
+    const found = await getMonumentByName(monumentName)
+    if (found) {
+      setSelectedMonument(found)
+      setIsDetailOpen(true)
+    }
+  }
+
   return (
     <main className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8">
@@ -38,20 +48,38 @@ export default function Home() {
         Explore Monuments Around the World
       </h1>
 
-      <CountryStateSelector
-        selectedCountry={selectedCountry}
-        selectedState={selectedState}
-        onCountryChange={handleCountryChange}
-        onStateChange={handleStateChange}
-      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Left side: Country/State + List */}
+        <div>
+          <CountryStateSelector
+            selectedCountry={selectedCountry}
+            selectedState={selectedState}
+            onCountryChange={handleCountryChange}
+            onStateChange={handleStateChange}
+          />
 
-      {selectedState && (
-        <MonumentList country={selectedCountry!} state={selectedState} onMonumentSelect={handleMonumentSelect} />
-      )}
+          {selectedState && (
+            <MonumentList
+              country={selectedCountry!}
+              state={selectedState}
+              onMonumentSelect={handleMonumentSelect}
+            />
+          )}
 
-      {selectedMonument && (
-        <MonumentDetail monument={selectedMonument} isOpen={isDetailOpen} onClose={handleCloseDetail} />
-      )}
+          {selectedMonument && (
+            <MonumentDetail
+              monument={selectedMonument}
+              isOpen={isDetailOpen}
+              onClose={handleCloseDetail}
+            />
+          )}
+        </div>
+
+        {/* Right side: Image Upload + Prediction */}
+        <div>
+          <MonumentPredictor onSelectMonument={handlePredictionSelect} />
+        </div>
+      </div>
     </main>
   )
 }
