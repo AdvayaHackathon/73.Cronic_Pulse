@@ -1,3 +1,4 @@
+
 import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -13,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-[#fdf5df]`}>
+      <body className={`${inter.className} bg-gradient-to-l from-purple-500 to-blue-500 text-white`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="flex min-h-screen flex-col">
             <div className="flex flex-1">
