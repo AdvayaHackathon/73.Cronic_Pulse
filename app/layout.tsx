@@ -1,15 +1,10 @@
-import type React from "react"
-import "@/app/globals.css"
+import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/footer"
+import Sidebar from "@/components/sidebar"
 
 const inter = Inter({ subsets: ["latin"] })
-
-export const metadata = {
-  title: "Monument Explorer",
-  description: "Explore monuments around the world",
-    generator: 'v0.dev'
-}
 
 export default function RootLayout({
   children,
@@ -18,15 +13,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
+      <body className={`${inter.className} bg-[#fdf5df]`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <div className="flex min-h-screen flex-col">
+            <div className="flex flex-1">
+              <Sidebar />
+              <div className="flex-1 p-6">{children}</div>
+            </div>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-import './globals.css'
