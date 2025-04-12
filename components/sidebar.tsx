@@ -1,8 +1,40 @@
 "use client"
 
-import Link from "next/link" 
-import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
 
-export default function Sidebar() { return ( <aside className="w-full md:w-64 border-r p-4 bg-white shadow-sm"> 
-<h2 className="text-lg font-semibold mb-4"></h2> <Link href="/predict/upload"> 
-<Button className="w-full " variant="default"> Upload Image </Button> </Link> </aside> ) }
+export default function Sidebar() {
+  const router = useRouter()
+
+  return (
+    <div className="w-64 bg-[#fdf5df] border-r p-4 flex flex-col space-y-4">
+      <button
+        onClick={() => router.push("/")}
+        className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-700"
+      >
+        Home
+      </button>
+      <button
+        onClick={() => router.push("/predict")}
+        className="w-full bg-white text-black font-semibold py-2 border rounded hover:bg-gray-200"
+      >
+        Upload Image
+      </button>
+      <a
+        href="https://v0-new-project-nyehrocixgl.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full block text-center bg-white text-black font-semibold py-2 border rounded hover:bg-gray-200"
+      >
+        Cultural Heritage
+      </a>
+      <a
+        href="https://sensational-zuccutto-8a4fb2.netlify.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full block text-center bg-white text-black font-semibold py-2 border rounded hover:bg-gray-200"
+      >
+        Monuments Near Me
+      </a>
+    </div>
+  )
+}
