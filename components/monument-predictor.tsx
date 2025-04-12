@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getMonumentByName } from "@/lib/monuments"
+import MonumentDetail from "@/components/monument-detail"
+import type { Monument } from "@/types/monument"
 
 export type MonumentPredictorProps = {
   onSelectMonument?: (monumentName: string) => void
@@ -13,8 +15,9 @@ export default function MonumentPredictor({ onSelectMonument }: MonumentPredicto
   const [file, setFile] = useState<File | null>(null)
   const [preview, setPreview] = useState<string | null>(null)
   const [result, setResult] = useState<{ place: string; confidence: number } | null>(null)
-  const [details, setDetails] = useState<any | null>(null)
+  const [details, setDetails] = useState<Monument | null>(null)
   const [loading, setLoading] = useState(false)
+  const [showDetail, setShowDetail] = useState(false)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0]
@@ -23,6 +26,7 @@ export default function MonumentPredictor({ onSelectMonument }: MonumentPredicto
       setPreview(URL.createObjectURL(selected))
       setResult(null)
       setDetails(null)
+      setShowDetail(false)
     }
   }
 
@@ -38,11 +42,17 @@ export default function MonumentPredictor({ onSelectMonument }: MonumentPredicto
         body: formData,
       })
       const data = await res.json()
-      setResult(data)
 
       const fetched = await getMonumentByName(data.place)
-      setDetails(fetched)
-      if (onSelectMonument && fetched?.name) onSelectMonument(fetched.name)
+      if (fetched) {
+        setDetails(fetched)
+        setShowDetail(true)
+        if (onSelectMonument && fetched.name) onSelectMonument(fetched.name)
+      } else {
+        setResult({ place: data.place, confidence: data.confidence })
+        setDetails(null)
+        setShowDetail(true)
+      }
     } catch (err) {
       console.error("Prediction error:", err)
     } finally {
@@ -56,7 +66,12 @@ export default function MonumentPredictor({ onSelectMonument }: MonumentPredicto
         <CardTitle>Upload a Photo to Identify a Monument</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <input type="file" accept="image/*" onChange={handleFileChange} />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90"
+        />
 
         {preview && <img src={preview} alt="Preview" className="rounded w-full max-w-sm" />}
 
@@ -64,21 +79,19 @@ export default function MonumentPredictor({ onSelectMonument }: MonumentPredicto
           {loading ? "Analyzing..." : "Predict Monument"}
         </Button>
 
-        {result && (
-          <div className="mt-4 p-4 bg-muted rounded">
-            <h3 className="text-lg font-semibold">Prediction:</h3>
-            <p>Monument: {result.place}</p>
-            <p>Confidence: {result.confidence}</p>
-          </div>
-        )}
-
-        {details && (
-          <div className="mt-4 p-4 border rounded bg-card">
-            <h3 className="text-lg font-semibold mb-2">Details</h3>
-            <p><strong>Name:</strong> {details.name}</p>
-            <p><strong>Location:</strong> {details.location}</p>
-            <p><strong>Year Built:</strong> {details.yearBuilt}</p>
-            <p className="mt-2 text-muted-foreground">{details.description}</p>
+        {showDetail && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 animate-fade-in">
+            {details ? (
+              <MonumentDetail monument={{ ...details, mapPreview: false }} isOpen={true} onClose={() => setShowDetail(false)} />
+            ) : (
+              <div className="bg-white p-6 rounded shadow max-w-sm text-center">
+                <h2 className="text-xl font-semibold mb-2">Prediction</h2>
+                <p className="mb-1">Place: {result?.place}</p>
+                <p className="mb-4">Confidence: {result?.confidence}</p>
+                <p className="text-muted-foreground">No matching monument found in database.</p>
+                <Button className="mt-4" onClick={() => setShowDetail(false)}>Close</Button>
+              </div>
+            )}
           </div>
         )}
       </CardContent>
