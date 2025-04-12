@@ -2,12 +2,13 @@
 
 import { useState } from "react"
 import { MapPin } from "lucide-react"
+import "@/styles/globals.css"
 import CountryStateSelector from "@/components/country-state-selector"
 import MonumentList from "@/components/monument-list"
 import MonumentDetail from "@/components/monument-detail"
 import type { Monument } from "@/types/monument"
 import { getMonumentByName } from "@/lib/monuments"
-import Sidebar from "@/components/sidebar"
+
 
 export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
@@ -43,12 +44,12 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-center mb-8">
+      <h1 className="text-4xl font-extrabold text-center tracking-wide uppercase mb-2 text-black"> HERITAGEPULSE </h1>
+        <h4 className="text-3xl font-bold text-center mb-8">
           <MapPin className="inline-block mr-2" />
           Explore Monuments Around the World
-        </h1>
+        </h4>
 
         <CountryStateSelector
           selectedCountry={selectedCountry}
