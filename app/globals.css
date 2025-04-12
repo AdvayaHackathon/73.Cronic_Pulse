@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,7 @@
 /* Theme color setup */
 @layer base {
   :root {
-    --background: 44 84% 96%; /* #fdf5df */
+    --background: 44 84% 96%;
     --foreground: 222.2 84% 4.9%;
     --card: 44 84% 96%;
     --card-foreground: 222.2 84% 4.9%;
@@ -54,28 +55,11 @@
   }
 
   body {
-    @apply text-foreground;
-    background-color: hsl(var(--background));
+    @apply text-foreground min-h-screen;
+    background-image: linear-gradient(to left, #a855f7, #3b82f6);
     position: relative;
     z-index: 0;
   }
-}
-
-/* Taj Mahal faded background image */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("https://cdn.pixabay.com/photo/2015/03/26/09/41/taj-mahal-690293_960_720.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.06;
-  z-index: -1;
-  pointer-events: none;
 }
 
 /* Simple fade-in animation */
@@ -93,4 +77,3 @@ body::before {
 .animate-fade-in {
   animation: fade-in 0.5s ease-out;
 }
-body::before { content: ""; position: fixed; top: 0; left: 0; height: 100vh; width: 100vw; background-image: url("https://cdn.pixabay.com/photo/2015/03/26/09/41/taj-mahal-690293_960_720.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; opacity: 0.06; z-index: -1; pointer-events: none; }
