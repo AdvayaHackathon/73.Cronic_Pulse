@@ -6,6 +6,9 @@ export async function getMonumentsByLocation(country: string, state: string): Pr
   return monumentsData.filter((monument) => monument.country === country && monument.state === state)
 }
 
-export async function getMonumentByName(name: string): Promise<Monument | undefined> {
-  return monumentsData.find((monument) => monument.name.toLowerCase() === name.toLowerCase())
+export async function getMonumentByName(name: string | undefined): Promise<Monument | undefined> {
+  if (!name) return undefined
+  return monumentsData.find(
+    (monument) => monument.name.toLowerCase() === name.toLowerCase()
+  )
 }
