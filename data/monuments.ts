@@ -54,7 +54,7 @@ export const monumentsData: Monument[] = [
     country: "United States",
     state: "Washington DC",
     location: "National Mall, Washington DC",
-    imageUrl: "https://traveldigg.com/wp-content/uploads/2016/05/Lincoln-Memorial-Image-720x404.jpg",
+    imageUrl: "https://media.architecturaldigest.com/photos/56c7af26cd3bcb326e99b545/master/pass/lincoln-center-renovation-01.jpg",
     yearBuilt: "1922",
     visitingHours: "Open 24 hours",
     facts: [
@@ -383,7 +383,7 @@ export const monumentsData: Monument[] = [
     country: "India",
     state: "Tamil Nadu",
     location: "Gangaikonda Cholapuram, Tamil Nadu",
-    imageUrl: " https://commons.wikimedia.org/wiki/File:Brihadeeswarar_Temple.jpg",
+    imageUrl: "https://www.thehistoryhub.com/wp-content/uploads/2014/04/Brihadeeswarar-Temple-Pictures.jpg",
     yearBuilt: "11th Century",
     visitingHours: "6:00 AM to 12:00 PM and 4:00 PM to 8:00 PM",
     facts: [
@@ -866,7 +866,7 @@ export const monumentsData: Monument[] = [
   country: "India",
   state: "Goa",
   location: "Old Goa, Goa",
-  imageUrl: "https://goa-tourism.org.in/images/places-to-visit/headers/basilica-de-bom-jesus-goa-entry-fee-timings-holidays-reviews-header.jpg",
+  imageUrl: "https://t3.ftcdn.net/jpg/04/35/68/90/240_F_435689038_HJQIeEfjxHTNzOtDTSFP2gmgkRY1D1gL.jpg",
   yearBuilt: "1605",
   visitingHours: "9:00 AM to 6:30 PM",
   facts: [
@@ -1093,7 +1093,7 @@ export const monumentsData: Monument[] = [
   country: "India",
   state: "West Bengal",
   location: "Kolkata, West Bengal",
-  imageUrl: " https://commons.wikimedia.org/wiki/File:Victoria_Memorial_Kolkata.jpg",
+  imageUrl: "https://i.pinimg.com/originals/47/d2/02/47d202a1ff67bab9b29808dcb742a0ae.jpg",
   yearBuilt: "1921",
   visitingHours: "10:00 AM to 5:00 PM (Closed on Mondays)",
   facts: [
@@ -1118,7 +1118,7 @@ export const monumentsData: Monument[] = [
   country: "India",
   state: "Maharashtra",
   location: "Aurangabad, Maharashtra",
-  imageUrl: " https://www.whizzed.net/wp-content/uploads/2020/07/Ajanta-Caves-scaled.jpg",
+  imageUrl: "https://i.pinimg.com/originals/b1/4a/4c/b14a4c2edc4c2fe3790ce80df1d543f3.jpg",
   yearBuilt: "2nd century BCE to 6th century CE",
   visitingHours: "9:00 AM to 5:30 PM (Closed on Mondays)",
   facts: [
