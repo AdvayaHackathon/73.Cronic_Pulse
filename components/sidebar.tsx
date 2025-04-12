@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useRouter } from "next/navigation"
@@ -6,7 +7,7 @@ export default function Sidebar() {
   const router = useRouter()
 
   return (
-    <div className="w-64 bg-[#fdf5df] border-r p-4 flex flex-col space-y-4">
+    <div className="w-64 border-r p-4 flex flex-col space-y-4">
       <button
         onClick={() => router.push("/")}
         className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-700"
